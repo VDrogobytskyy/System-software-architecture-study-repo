@@ -42,4 +42,27 @@ memory allocated fail
 
 <img width="889" height="104" alt="Знімок екрана 2026-03-08 о 00 22 41" src="https://github.com/user-attachments/assets/85ecc8d8-b94d-4ba9-8e55-e145a3c541d0" />
 
+Код представлений у файлі: task4_3.c
 
+Результат виконання:
+
+```bash
+
+ 22:29:29  ltrace ./task
+__libc_start_main(0xb03cc6830858, 1, 0xfffffb006628, 0 <unfinished ...>
+putchar(10, 0xfffffb006628, 0xfffffb006638, 0xb03cc6830858
+)          = 10
+malloc(0)                                                            = 0xb03cf96bd6b0
+puts("malloc(0) returned NOT NULL valu"...malloc(0) returned NOT NULL value!
+)                          = 35
+free(0xb03cf96bd6b0)                                                 = <void>
+putchar(10, 1, 0xb03cf96bd, 0xb03cf96bd010
+)                          = 10
+__cxa_finalize(0xb03cc6850008, 0xb03cc6830800, 1, 568)               = 1
++++ exited (status 0) +++
+
+```
+звідси ми бачимо, що malloc(0) повернув саме адресу памʼятті, а не NULL.
+
+
+Завдання №4 загальне для усіх(Скриншот завдання):
