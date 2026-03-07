@@ -66,3 +66,68 @@ __cxa_finalize(0xb03cc6850008, 0xb03cc6830800, 1, 568)               = 1
 
 
 Завдання №4 загальне для усіх(Скриншот завдання):
+
+
+
+
+Якщо виконати цей код, отримаєм ось такий вивід:
+```bash
+./task
+
+On interation: 1 we managed to malloc: 4
+free(): double free detected in tcache 2
+Aborted (core dumped)
+
+ ltrace ./task
+__libc_start_main(0xb7762d120858, 1, 0xffffcbdb00e8, 0 <unfinished ...>
+putchar(10, 0xffffcbdb00e8, 0xffffcbdb00f8, 0xb7762d120858
+)          = 10
+malloc(4)                                                            = 0xb776404dd6b0
+printf("%s%d%s%zu\n", "On interation: ", 1, " we managed to malloc: ", 4On interation: 1 we managed to malloc: 4
+) = 41
+free(0xb776404dd6b0)                                                 = <void>
+free(0xb776404dd6b0free(): double free detected in tcache 2
+ <no return ...>
+--- SIGABRT (Aborted) ---
++++ killed by SIGABRT +++
+```
+
+Ми наочно бачимо, що програма намагається звільнити вже раніше виділену пам`ять,
+це стається тому що, ми не зануляємо вказівник після виклику для нього free()
+Виправимо це і переглянем результат!
+
+Код представлений у файлі task4_4.c
+
+Результат виконання виправленої програми:
+ 
+```bash
+./task4
+
+On interation: 1 we managed to malloc: 4
+On interation: 2 we managed to malloc: 4
+On interation: 3 we managed to malloc: 4
+
+ltrace ./task4
+__libc_start_main(0xb28d8d920858, 1, 0xffffd27afec8, 0 <unfinished ...>
+putchar(10, 0xffffd27afec8, 0xffffd27afed8, 0xb28d8d920858
+) = 10
+malloc(4)                                           = 0xb28da1f1c6b0
+printf("%s%d%s%zu\n", "On interation: ", 1, " we managed to malloc: ", 4On interation: 1 we managed to malloc: 4
+) = 41
+free(0)                                             = <void>
+malloc(4)                                           = 0xb28da1f1c6d0
+printf("%s%d%s%zu\n", "On interation: ", 2, " we managed to malloc: ", 4On interation: 2 we managed to malloc: 4
+) = 41
+free(0)                                             = <void>
+malloc(4)                                           = 0xb28da1f1c6f0
+printf("%s%d%s%zu\n", "On interation: ", 3, " we managed to malloc: ", 4On interation: 3 we managed to malloc: 4
+) = 41
+free(0)                                             = <void>
+putchar(10, 0xec3df9d8db50, 0, 0
+)                   = 10
+__cxa_finalize(0xb28d8d940008, 0xb28d8d920800, 1, 568) = 1
++++ exited (status 0) +++
+```
+Отже тепер після виправлення цієї проблеми, програма стає робочою, та ми правильно працюєм із памʼяттю!
+
+Завдання №5 загальне для усіх(Скриншот завдання):
