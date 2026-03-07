@@ -150,6 +150,7 @@ program didn`t finished!
 
 Завдання №6 загальне для усіх(Скриншот завдання):
 
+<img width="840" height="63" alt="Знімок екрана 2026-03-08 о 01 42 51" src="https://github.com/user-attachments/assets/a5ce62df-23c6-4fc9-8b74-86dd1a9896f6" />
 
 Код представлений у файлі: task4_6.c
 
@@ -185,3 +186,6 @@ __cxa_finalize(0xc15fd3db0008, 0xc15fd3d90900, 1, 568)                          
 
 
 Завдання №7 загальне для усіх(Скриншот завдання):
+
+<img width="562" height="205" alt="Знімок екрана 2026-03-08 о 01 43 07" src="https://github.com/user-attachments/assets/eac37ee9-6542-4028-8795-f16c682b4f99" />
+
