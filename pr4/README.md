@@ -151,3 +151,37 @@ program didn`t finished!
 Завдання №6 загальне для усіх(Скриншот завдання):
 
 
+Код представлений у файлі: task4_6.c
+
+Результат виконання:
+```bash
+
+ltrace ./task
+__libc_start_main(0xc15fd3d90958, 1, 0xfffffaf596c8, 0 <unfinished ...>
+putchar(10, 0xfffffaf596c8, 0xfffffaf596d8, 0xc15fd3d90958
+)                      = 10
+malloc(8)                                                                        = 0xc15ffc91c6b0
+printf("%s%p\n", "memory for void pointer succesfu"..., 0xc15ffc91c6b0memory for void pointer succesfully allocated! ptr adress = 0xc15ffc91c6b0
+)          = 75
+malloc(16)                                                                       = 0xc15ffc91c6d0
+printf("%s%p\n", "confirmed allocation by realloc("..., 0xc15ffc91c6d0confirmed allocation by realloc(NUll) real_mal_ptr = 0xc15ffc91c6d0
+)          = 68
+realloc(0xc15ffc91c6b0, 0)                                                       = 0
+printf("%s%p\n", "after realloc(..., 0) we have pt"..., 0xc15ffc91c6b0after realloc(..., 0) we have ptr = 0xc15ffc91c6b0
+)          = 51
+puts("but this memory is already free,"...but this memory is already free, so we cannot use it
+)                                      = 53
+puts("program didn`t finished!"program didn`t finished!
+)                                                 = 25
+free(0)                                                                          = <void>
+putchar(10, 1, 0xfbad2a84, 1
+)                                                    = 10
+__cxa_finalize(0xc15fd3db0008, 0xc15fd3d90900, 1, 568)                           = 1
++++ exited (status 0) +++
+```
+
+Звідси робимо висновок, що realloc(NULL, n) працює як malloc(),
+а realloc(..., 0) працює як free()
+
+
+Завдання №7 загальне для усіх(Скриншот завдання):
