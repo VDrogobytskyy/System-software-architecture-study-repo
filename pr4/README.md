@@ -133,4 +133,21 @@ __cxa_finalize(0xb28d8d940008, 0xb28d8d920800, 1, 568) = 1
 
 <img width="842" height="66" alt="Знімок екрана 2026-03-08 о 00 58 31" src="https://github.com/user-attachments/assets/20e7ed81-0637-4399-a7ff-31e0f4bd4fdb" />
 
+Код представлений у файлі: task4_5.c
+
+Результат виконання:
+```bash
+
+memory for void pointer succesfully allocated! ptr adress = 0xb31e8be426b0
+realloc fail!
+we still can use ptr!
+program didn`t finished!
+
+```
+
+Отже якщо realloc() не зможе виділити памʼять воно просто поверне NULL, та програма не впаде,
+а до старого вказівника ми досі маємо доступ, та він не "загубився"
+
+Завдання №6 загальне для усіх(Скриншот завдання):
+
 
