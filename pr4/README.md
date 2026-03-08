@@ -189,3 +189,64 @@ __cxa_finalize(0xc15fd3db0008, 0xc15fd3d90900, 1, 568)                          
 
 <img width="562" height="205" alt="Знімок екрана 2026-03-08 о 01 43 07" src="https://github.com/user-attachments/assets/eac37ee9-6542-4028-8795-f16c682b4f99" />
 
+Код наданий у завданні:
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct sbar {
+        float x, y;
+};
+
+int main(void){
+        putchar('\n');
+        struct sbar *ptr, *newptr;
+
+        ptr = calloc(1000, sizeof(struct sbar));
+
+        newptr = realloc(ptr, 500 * sizeof(struct sbar));
+        if (newptr == NULL){
+                free(ptr);
+                return 1;
+        }
+        ptr = newptr;
+
+        putchar('\n');
+        return 0;
+}
+```
+Результат його виконання:
+```bash
+ltrace ./task
+__libc_start_main(0xc18e4f2e0858, 1, 0xffffc0350a68, 0 <unfinished ...>
+putchar(10, 0xffffc0350a68, 0xffffc0350a78, 0xc18e4f2e0858
+)                      = 10
+calloc(1000, 8)                                                                  = 0xc18e5c0a76b0
+realloc(0xc18e5c0a76b0, 4000)                                                    = 0xc18e5c0a76b0
+putchar(10, 0xc18e5c0a76a0, 0, 0xe2f490490110
+)                                   = 10
+__cxa_finalize(0xc18e4f300008, 0xc18e4f2e0800, 1, 568)                           = 1
++++ exited (status 0) +++
+```
+
+Переписаний варіант представлено у файлі: task4_7.c
+
+Результат його виконання:
+```bash
+ltrace ./task
+__libc_start_main(0xacfe4c6c0858, 1, 0xffffca102818, 0 <unfinished ...>
+putchar(10, 0xffffca102818, 0xffffca102828, 0xacfe4c6c0858
+)                      = 10
+calloc(1000, 8)                                                                  = 0xacfe5a76a6b0
+reallocarray(0xacfe5a76a6b0, 500, 8, 0xacfe5a76c580)                             = 0xacfe5a76a6b0
+putchar(10, 0xacfe5a76a6a0, 0, 0xe552cc040110
+)                                   = 10
+__cxa_finalize(0xacfe4c6e0008, 0xacfe4c6c0800, 1, 568)                           = 1
++++ exited (status 0) +++
+```
+
+В обох випадках програма спочатку виділяє пам’ять через calloc(1000, 8), а потім зменшує її до 4000 байт:
+у першому випадку через realloc, у другому через reallocarray.
+Функціонально обидва варіанти виконують однакову операцію, відмінність лише в тому, що reallocarray безпечніший і перевіряє переповнення при множенні розмірів, тоді як realloc такої перевірки не має. 
+Програма завершується успішно, викликаючи __cxa_finalize.
