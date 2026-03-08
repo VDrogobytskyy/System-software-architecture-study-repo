@@ -255,5 +255,48 @@ __cxa_finalize(0xacfe4c6e0008, 0xacfe4c6c0800, 1, 568)                          
 
 <img width="600" height="49" alt="Знімок екрана 2026-03-08 о 02 05 05" src="https://github.com/user-attachments/assets/4cadbf97-08cc-4d78-ad41-3100cd9ef1e8" />
 
+Код програми представлено у файлі: task_by_var_6.c
 
+Після кожної ітерації програма виводить сповіщення та впадає в "сон", що дає змогу в іншмоу терміналі зручно переглянути всю необхіднк інформацію
 
+Вивід програми:
+
+```bash
+./task
+
+Program started. PID: 10917
+
+--- Before allocation ---
+grep -E 'VmSize|VmRSS' /proc/10917/status
+press ENTER, to continue...
+
+```
+```bash
+grep -E 'VmSize|VmRSS' /proc/10917/status
+VmSize:	    2252 kB
+VmRSS:	    1400 kB
+```
+```bash
+--- After malloc (Lazy Allocation) ---
+grep -E 'VmSize|VmRSS' /proc/10917/status
+press ENTER, to continue...
+```
+```bash
+grep -E 'VmSize|VmRSS' /proc/10917/status
+VmSize:	  264400 kB
+VmRSS:	    1404 kB
+```
+```bash
+touching pages...
+
+--- After allocation (Physical Allocation) ---
+grep -E 'VmSize|VmRSS' /proc/10917/status
+press ENTER, to continue...
+```
+```bash
+grep -E 'VmSize|VmRSS' /proc/10917/status
+VmSize:	  264400 kB
+VmRSS:	  263544 kB
+```
+
+У цьому експерименті ми виділили великий обсяг пам’яті (256 МБ) і виміряли параметри VmSize та VmRSS до та після виділення і запису в пам’ять. До виділення пам’яті фізична (VmRSS) і віртуальна (VmSize) пам’ять були мінімальні. Після виклику malloc VmSize збільшилась до розміру виділеної пам’яті, але VmRSS майже не змінилась, що демонструє принцип лінивої алокації (lazy allocation): віртуальна пам’ять резервується, а фізичні сторінки виділяються лише при фактичному записі. Після того, як ми звернулись до кожної сторінки, VmRSS зросла майже до повного розміру виділеної пам’яті, підтверджуючи, що фізичне виділення сталося тільки під час фактичного використання. Таким чином, VmSize відображає всю зарезервовану пам’ять, а VmRSS — реально зайняту фізичну пам’ять, і експеримент наочно ілюструє роботу механізму lazy allocation.
