@@ -1,0 +1,8 @@
+Apple is a fruit, but this line starts with a capital letter.
+I have a red cherry in my pocket.
+There are many apples on the tree, but grep usually looks for exact matches.
+This line is just about a banana and contains nothing interesting.
+pineapple is a different fruit, but it contains the word apple inside.
+An apple a day keeps the doctor away.
+The word APPLE in uppercase might not be found if your grep is case-sensitive.
+Last line: just one more apple.
