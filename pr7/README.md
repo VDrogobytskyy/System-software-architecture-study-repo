@@ -69,6 +69,29 @@ total 36
 Завдання №3 загальне для усіх(Скриншот завдання):
 <img width="691" height="46" alt="Знімок екрана 2026-04-09 о 20 20 32" src="https://github.com/user-attachments/assets/ee4270d6-69f2-4048-89bb-e9002006c4cd" />
 
+Відповідь:
+У даному завданні було створено власну реалізацію команди grep, код програми працює ідентично, відкривається файл для читання, а також приймається на вхід слово яке ми шукаєм результати виконання продемонстровані нижче.
+
+Вивід в консоль:
+Оригінальний grep:
+```bash
+grep apple txt_file_for_task3.txt
+There are many apples on the tree, but grep usually looks for exact matches.
+pineapple is a different fruit, but it contains the word apple inside.
+An apple a day keeps the doctor away.
+Last line: just one more apple.
+```
+
+Власна реалізація:
+```bash
+./task3 apple txt_file_for_task3.txt
+
+There are many apples on the tree, but grep usually looks for exact matches.
+pineapple is a different fruit, but it contains the word apple inside.
+An apple a day keeps the doctor away.
+Last line: just one more apple.
+```
+
 Завдання №4 загальне для усіх(Скриншот завдання):
 <img width="685" height="75" alt="Знімок екрана 2026-04-09 о 20 20 49" src="https://github.com/user-attachments/assets/902cf33b-816d-48e5-8d2b-84f9d8338fd6" />
 
