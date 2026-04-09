@@ -33,6 +33,39 @@ drogobyt drogserv:pts/0 Apr  9 17:01 :10
 Завдання №2 загальне для усіх(Скриншот завдання):
 <img width="692" height="78" alt="Знімок екрана 2026-04-09 о 20 20 21" src="https://github.com/user-attachments/assets/c9ead34a-4cd1-489b-881e-86b573d1cadc" />
 
+Відопвідь:
+Програма імітує команду ls -l, поетапно збираючи дані про кожен об'єкт у папці: спочатку функція opendir відкриває доступ до поточної директорії, після чого цикл readdir по черзі витягує імена всіх наявних файлів, ігноруючи приховані (ті, що починаються з крапки). Для кожного знайденого імені викликається системна функція stat, яка звертається до індексних дескрипторів файлової системи, щоб отримати повне «досьє» файлу (структуру file_stat), що містить його розмір, ідентифікатори власника та бітову маску прав доступу. Далі програма розшифровує ці технічні дані: функція print_permissions за допомогою бітових операцій перетворює маску в рядок rwxrwxrwx, функції getpwuid та getgrgid знаходять у системних базах даних текстові імена користувача і групи замість їхніх цифрових номерів, а strftime перетворює системні секунди останньої зміни файлу на зрозумілу дату. У результаті всі ці підготовлені фрагменти (права, посилання, власник, розмір, дата та ім'я) склеюються в один рядок і виводяться на екран, відтворюючи стандартний вигляд детального списку файлів UNIX.
+
+Вивід в консоль:
+Вивід команди ls -l :
+```bash
+ls -l
+total 36
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy     0 Apr  9 17:30 file_created_for_task2_1
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy     0 Apr  9 17:30 file_created_for_task2_2
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy     0 Apr  9 17:30 file_created_for_task2_3
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy     0 Apr  9 17:30 file_created_for_task2_4
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy     0 Apr  9 17:30 file_created_for_task2_5
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  4715 Apr  9 17:28 README.md
+-rwxrwxr-x 1 drogobytskyyy drogobytskyyy 70984 Apr  9 18:00 task2
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy   615 Apr  9 17:26 task7_1.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  1600 Apr  9 18:00 task7_2.c
+```
+Вивід реалізованої програми:
+```bash
+./task2
+
+-rwxrwxr-x  1 drogobytskyyy drogobytskyyy    70984 Apr 09 18:00 task2
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy        0 Apr 09 17:30 file_created_for_task2_5
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy        0 Apr 09 17:30 file_created_for_task2_1
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy        0 Apr 09 17:30 file_created_for_task2_2
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy      615 Apr 09 17:26 task7_1.c
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy     1600 Apr 09 18:00 task7_2.c
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy        0 Apr 09 17:30 file_created_for_task2_3
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy        0 Apr 09 17:30 file_created_for_task2_4
+-rw-rw-r--  1 drogobytskyyy drogobytskyyy     4715 Apr 09 17:28 README.md
+```
+
 Завдання №3 загальне для усіх(Скриншот завдання):
 <img width="691" height="46" alt="Знімок екрана 2026-04-09 о 20 20 32" src="https://github.com/user-attachments/assets/ee4270d6-69f2-4048-89bb-e9002006c4cd" />
 
