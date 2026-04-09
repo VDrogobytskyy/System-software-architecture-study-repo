@@ -1,0 +1,22 @@
+01. Kyiv - The capital of Ukraine.
+02. Lviv - The cultural heart of the country.
+03. Odesa - The pearl by the Black Sea.
+04. Dnipro - A powerful industrial center.
+05. Kharkiv - A city of students and science.
+06. Vinnytsia - Famous for its floating fountains.
+07. Chernihiv - One of the oldest cities in Europe.
+08. Poltava - Known for its history and dumplings.
+09. Ivano-Frankivsk - The gateway to the Carpathians.
+10. Ternopil - A peaceful city with a beautiful lake.
+11. Lutsk - Home to the Lubart's Castle.
+12. Rivne - Famous for the Tunnel of Love nearby.
+13. Zhytomyr - The birthplace of space exploration legends.
+14. Sumy - A green city in the northeast.
+15. Cherkasy - Located on the banks of the Dnipro.
+16. Mykolaiv - The city of shipbuilders.
+17. Kherson - Known for its steppes and watermelons.
+18. Zaporizhzhia - The land of the Cossacks.
+19. Uzhhorod - Famous for cherry blossoms in spring.
+20. Chernivtsi - The "Little Vienna" of Ukraine.
+21. This is the line after the first pause!
+22. You should have pressed Enter to see this.

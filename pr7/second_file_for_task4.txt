@@ -1,0 +1,21 @@
+Row 01: Kernel - The core of the operating system.
+Row 02: Shell - The interface between user and kernel.
+Row 03: Process - A program in execution.
+Row 04: Thread - The smallest unit of processing.
+Row 05: Memory - Where data is stored temporarily.
+Row 06: Pointer - A variable that stores an address.
+Row 07: Buffer - Temporary storage for data transfer.
+Row 08: Compiler - Translates code to machine language.
+Row 09: Linker - Combines object files into one.
+Row 10: Library - A collection of precompiled code.
+Row 11: Header - File containing declarations.
+Row 12: Struct - A custom data type in C.
+Row 13: Array - A collection of similar elements.
+Row 14: Loop - Repeated execution of code blocks.
+Row 15: Function - A reusable block of code.
+Row 16: Variable - A named storage location.
+Row 17: Constant - A value that never changes.
+Row 18: Syntax - The rules of the language.
+Row 19: Debugger - A tool to find and fix errors.
+Row 20: Git - A version control system.
+Row 21: New File Start: You reached the end of the second file's first page!
