@@ -174,6 +174,37 @@ Row 21: New File Start: You reached the end of the second file's first page!
 Завдання №5 загальне для усіх(Скриншот завдання):
 <img width="682" height="46" alt="Знімок екрана 2026-04-09 о 20 21 01" src="https://github.com/user-attachments/assets/f14e00b7-ec19-475a-85a9-84afafb3024a" />
 
+Відповідь:
+У даному завданні ми реалізували програму яка знаходить файл починаючи з поточної директорії формує його повний шлях, та виводить це на екран, якщо в даній директорії знаходяться підкаталоги(папки) функція заходить туди та рекурсивно викликає себе ж, тим самим виводить всі файли з цих підкаталогів. Роботу продемонстровано нижче у вигляді виводу в консоль:
+
+Вивід в консоль:
+```bash
+./task5
+
+Listing all files starting from current directory:
+
+File: ./second_file_for_task4.txt
+File: ./task5
+File: ./task7_5.c
+File: ./task7_4.c
+File: ./task7_1.c
+Directory: ./empty_dir
+File: ./empty_dir/empty3.txt
+File: ./empty_dir/empty1.txt
+File: ./empty_dir/empty2.txt
+File: ./task7_2.c
+File: ./third_file_for_task4.txt
+File: ./txt_file_for_task3.txt
+Directory: ./empty_dir2
+File: ./empty_dir2/empty3.txt
+File: ./empty_dir2/empty1.txt
+File: ./empty_dir2/empty2.txt
+File: ./first_file_for_task4.txt
+File: ./task7_3.c
+File: ./README.md
+
+```
+
 Завдання №6 загальне для усіх(Скриншот завдання):
 <img width="601" height="35" alt="Знімок екрана 2026-04-09 о 20 21 14" src="https://github.com/user-attachments/assets/d14e7628-81f8-4ab4-805a-38175fa91c1f" />
 
