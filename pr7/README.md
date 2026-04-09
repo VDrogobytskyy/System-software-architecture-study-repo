@@ -208,6 +208,19 @@ File: ./README.md
 Завдання №6 загальне для усіх(Скриншот завдання):
 <img width="601" height="35" alt="Знімок екрана 2026-04-09 о 20 21 14" src="https://github.com/user-attachments/assets/d14e7628-81f8-4ab4-805a-38175fa91c1f" />
 
+Відповідь:
+У даному завданні ми спростили код попереднього завдання, забравши вивід файлів, но добавивши зберігання та сортування назв підкаталогів.
+
+Вивід в консоль:
+```bash
+./task6
+
+Directory: a
+Directory: empty_dir
+Directory: empty_dir2
+Directory: x
+```
+
 Завдання №7 загальне для усіх(Скриншот завдання):
 <img width="698" height="70" alt="Знімок екрана 2026-04-09 о 20 21 23" src="https://github.com/user-attachments/assets/399a4756-4e84-4d9d-99de-76927e98aea5" />
 
