@@ -95,6 +95,82 @@ Last line: just one more apple.
 Завдання №4 загальне для усіх(Скриншот завдання):
 <img width="685" height="75" alt="Знімок екрана 2026-04-09 о 20 20 49" src="https://github.com/user-attachments/assets/902cf33b-816d-48e5-8d2b-84f9d8338fd6" />
 
+Відповідь:
+У даному завданні було реалізовано власну технологію more, тобто ми читаєм циклом три різні файли, а наша програма встановлює обмеження на вивід в 20 рядків(згідно умові завдання), після чого запитує любий ввід та продовжує роботу.
+
+Вивід в консоль(на виводі --More-- відбувався ввід(Enter)):
+```bash
+./task4 first_file_for_task4.txt second_file_for_task4.txt third_file_for_task4.txt
+
+01. Kyiv - The capital of Ukraine.
+02. Lviv - The cultural heart of the country.
+03. Odesa - The pearl by the Black Sea.
+04. Dnipro - A powerful industrial center.
+05. Kharkiv - A city of students and science.
+06. Vinnytsia - Famous for its floating fountains.
+07. Chernihiv - One of the oldest cities in Europe.
+08. Poltava - Known for its history and dumplings.
+09. Ivano-Frankivsk - The gateway to the Carpathians.
+10. Ternopil - A peaceful city with a beautiful lake.
+11. Lutsk - Home to the Lubart's Castle.
+12. Rivne - Famous for the Tunnel of Love nearby.
+13. Zhytomyr - The birthplace of space exploration legends.
+14. Sumy - A green city in the northeast.
+15. Cherkasy - Located on the banks of the Dnipro.
+16. Mykolaiv - The city of shipbuilders.
+17. Kherson - Known for its steppes and watermelons.
+18. Zaporizhzhia - The land of the Cossacks.
+19. Uzhhorod - Famous for cherry blossoms in spring.
+20. Chernivtsi - The "Little Vienna" of Ukraine.
+--More--
+21. This is the line after the first pause!
+22. You should have pressed Enter to see this.
+Row 01: Kernel - The core of the operating system.
+Row 02: Shell - The interface between user and kernel.
+Row 03: Process - A program in execution.
+Row 04: Thread - The smallest unit of processing.
+Row 05: Memory - Where data is stored temporarily.
+Row 06: Pointer - A variable that stores an address.
+Row 07: Buffer - Temporary storage for data transfer.
+Row 08: Compiler - Translates code to machine language.
+Row 09: Linker - Combines object files into one.
+Row 10: Library - A collection of precompiled code.
+Row 11: Header - File containing declarations.
+Row 12: Struct - A custom data type in C.
+Row 13: Array - A collection of similar elements.
+Row 14: Loop - Repeated execution of code blocks.
+Row 15: Function - A reusable block of code.
+Row 16: Variable - A named storage location.
+Row 17: Constant - A value that never changes.
+Row 18: Syntax - The rules of the language.
+--More--
+Row 19: Debugger - A tool to find and fix errors.
+Row 20: Git - A version control system.
+Row 21: New File Start: You reached the end of the second file's first page!
+1. "First, solve the problem. Then, write the code."
+2. "Experience is the name everyone gives to their mistakes."
+3. "In order to be irreplaceable, one must always be different."
+4. "Java is to JavaScript what car is to Carpet."
+5. "Knowledge is power."
+6. "Code is like humor. When you have to explain it, it’s bad."
+7. "Fix the cause, not the symptom."
+8. "Optimism is a occupational hazard of programming."
+9. "Simplicity is the soul of efficiency."
+10. "Before software can be reusable it first has to be usable."
+11. "Make it work, make it right, make it fast."
+12. "Deleted code is debugged code."
+13. "Don't repeat yourself (DRY principle)."
+14. "Keep it simple, stupid (KISS principle)."
+15. "It's not a bug – it's an undocumented feature."
+16. "Software is a gas; it expands to fill its container."
+17. "The best way to predict the future is to invent it."
+--More--
+18. "Programs must be written for people to read."
+19. "Quality is not an act, it is a habit."
+20. "Talk is cheap. Show me the code."
+21. "Final line of the test: Everything worked perfectly!"
+```
+
 Завдання №5 загальне для усіх(Скриншот завдання):
 <img width="682" height="46" alt="Знімок екрана 2026-04-09 о 20 21 01" src="https://github.com/user-attachments/assets/f14e00b7-ec19-475a-85a9-84afafb3024a" />
 
