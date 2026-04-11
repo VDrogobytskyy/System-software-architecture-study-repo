@@ -358,6 +358,38 @@ Our func worked for: 1.2350 miliseconds.
 Завдання №10 загальне для усіх(Скриншот завдання):
 <img width="696" height="187" alt="Знімок екрана 2026-04-09 о 20 22 03" src="https://github.com/user-attachments/assets/aa732e48-4012-495f-b41d-8a702ec0bffc" />
 
+Відповідь:
+У даному завданні для досягення бажаного результату було використано дві формули, а саме:
+```c
+return (double)rand() / (double)RAND_MAX;
+return ((double)rand() / (double)RAND_MAX) * n;
+```
+
+Вивід в консоль:
+```bash
+gcc -Wall task7_10.c -o task10
+   ~/System-software-architecture-study-repo/pr7  main ≡  ?2  50ms   
+ 10:44:21  ./task10
+
+(a) Range [0.0, 1.0]:
+  0.231718
+  0.384082
+  0.041916
+  0.671712
+  0.439410
+  0.965681
+  0.252700
+
+(b) Range [0.0, 59.10]:
+  37.673919
+  6.795339
+  5.862464
+  16.417462
+  33.188772
+  42.669085
+  15.369657
+```
+
 Завдання за варіантом №6(Скриншот завдання):
 <img width="676" height="63" alt="Знімок екрана 2026-04-09 о 20 22 15" src="https://github.com/user-attachments/assets/19246cd4-8608-4091-a61e-a3366d9a47de" />
 
