@@ -294,6 +294,54 @@ ls -l *c
 Завдання №8 загальне для усіх(Скриншот завдання):
 <img width="692" height="73" alt="Знімок екрана 2026-04-09 о 20 21 36" src="https://github.com/user-attachments/assets/c74638bb-5fc2-4f99-ae48-ef1764ebaef1" />
 
+Відповідь:
+У даному завданні наша програма уникає каталогів та працює лише для файлів у директорії, проходячись по кожному та запитуючи, чи варто його видалити, для наглядності роботи програми спочатку виконаєм команду ls та побачим, наявність файлу file_to_delete.txt:
+```bash
+ls
+a                          task7_1.c  task7_8.c
+empty_dir                  task7_2.c  task8
+empty_dir2                 task7_3.c  third_file_for_task4.txt
+file_to_delete.txt         task7_4.c  txt_file_for_task3.txt
+first_file_for_task4.txt   task7_5.c  x
+README.md                  task7_6.c
+second_file_for_task4.txt  task7_7.c
+```
+Тепер виконаєм програму:
+```bash
+./task8
+
+Delete file 'task7_6.c'? (y/n): n
+Skipped.
+Delete file 'second_file_for_task4.txt'? (y/n): n
+Skipped.
+Delete file 'task7_8.c'? (y/n): n
+Skipped.
+Delete file 'task7_5.c'? (y/n): n
+Skipped.
+Delete file 'task7_4.c'? (y/n): n
+Skipped.
+Delete file 'file_to_delete.txt'? (y/n): y
+File 'file_to_delete.txt' successfully deleted.
+
+....
+
+Delete file '.gitignore'? (y/n): n
+Skipped.
+Delete file 'README.md'? (y/n): n
+Skipped.
+```
+
+Видаляємо тільки наперед підготовлений для цього файл, інші не рухаєм, продемонструєм результат виконання командою ls:
+```bash
+ls
+a                          task7_1.c  task7_7.c
+empty_dir                  task7_2.c  task7_8.c
+empty_dir2                 task7_3.c  task8
+first_file_for_task4.txt   task7_4.c  third_file_for_task4.txt
+README.md                  task7_5.c  txt_file_for_task3.txt
+second_file_for_task4.txt  task7_6.c  x
+```
+
 Завдання №9 загальне для усіх(Скриншот завдання):
 <img width="659" height="45" alt="Знімок екрана 2026-04-09 о 20 21 49" src="https://github.com/user-attachments/assets/f6781385-415d-4cf5-9d11-e45f67e7cdc4" />
 
