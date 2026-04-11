@@ -224,6 +224,73 @@ Directory: x
 Завдання №7 загальне для усіх(Скриншот завдання):
 <img width="698" height="70" alt="Знімок екрана 2026-04-09 о 20 21 23" src="https://github.com/user-attachments/assets/399a4756-4e84-4d9d-99de-76927e98aea5" />
 
+Відповідь:
+Перш за все нам необхідно виконати команду ls -l *c, щоб отримати поточний стан дозволів для вихідних файлів:
+
+```bash
+ls -l *c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  615 Apr  9 17:26 task7_1.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy 1600 Apr  9 18:03 task7_2.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  596 Apr  9 18:34 task7_3.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  578 Apr  9 20:01 task7_4.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  913 Apr  9 20:11 task7_5.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy 1148 Apr  9 20:29 task7_6.c
+```
+
+Так як ми бачимо вкінці r-- це означає, що права начитання і так за замовчуванням, надані іншим користувачам, для наглядності виконання даного завдання, заберемо ці права командою chmod o-r task7_*.c, та продемонструєм зміни у правах доступу тою ж командою ls -l *c:
+```bash
+ls -l *c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy  615 Apr  9 17:26 task7_1.c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy 1600 Apr  9 18:03 task7_2.c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy  596 Apr  9 18:34 task7_3.c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy  578 Apr  9 20:01 task7_4.c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy  913 Apr  9 20:11 task7_5.c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy 1148 Apr  9 20:29 task7_6.c
+```
+Запустимо нашу програму та в хаотичному порядку будем надавати права на читання для кожного файлу:
+```bash
+./task7
+File founded: task7_6.c
+Give other users read permission? (y/n): y
+Successful: Permission granted.
+
+File founded: task7_5.c
+Give other users read permission? (y/n): y
+Successful: Permission granted.
+
+File founded: task7_4.c
+Give other users read permission? (y/n): y
+Successful: Permission granted.
+
+File founded: task7_1.c
+Give other users read permission? (y/n): n
+Canceled.
+
+File founded: task7_2.c
+Give other users read permission? (y/n): n
+Canceled.
+
+File founded: task7_7.c
+Give other users read permission? (y/n): y
+Successful: Permission granted.
+
+File founded: task7_3.c
+Give other users read permission? (y/n): n
+Canceled.
+```
+Як результат виконання виконаєм команду ls -l *c, та переконаємось що відповідним файлам, надані відповідні првав:
+
+```bash
+ls -l *c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy  615 Apr  9 17:26 task7_1.c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy 1600 Apr  9 18:03 task7_2.c
+-rw-rw---- 1 drogobytskyyy drogobytskyyy  596 Apr  9 18:34 task7_3.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  578 Apr  9 20:01 task7_4.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy  913 Apr  9 20:11 task7_5.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy 1148 Apr  9 20:29 task7_6.c
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy 1333 Apr  9 22:28 task7_7.c
+```
+
 Завдання №8 загальне для усіх(Скриншот завдання):
 <img width="692" height="73" alt="Знімок екрана 2026-04-09 о 20 21 36" src="https://github.com/user-attachments/assets/c74638bb-5fc2-4f99-ae48-ef1764ebaef1" />
 
