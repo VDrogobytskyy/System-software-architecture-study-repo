@@ -393,3 +393,31 @@ gcc -Wall task7_10.c -o task10
 Завдання за варіантом №6(Скриншот завдання):
 <img width="676" height="63" alt="Знімок екрана 2026-04-09 о 20 22 15" src="https://github.com/user-attachments/assets/19246cd4-8608-4091-a61e-a3366d9a47de" />
 
+Відповідь:
+Реалізація даного завдання знаходиться у файлі: task_by_var_6.c, реалізуємо це через кількість жорстких посилань (st_nlink): якщо на файл створено багато посилань, він вважається "популярним" або спільним. Та для нього змінюються відповідні права.
+Також програма вміє обробляти помилки, та демонструє необхідну інформацію.
+
+Вивід у консоль:
+```bash
+./task
+
+File analyse: .
+File: task7_6.c       | Link: 1 | Permissions: 664
+File: second_file_for_task4.txt | Link: 1 | Permissions: 664
+File: task7_8.c       | Link: 1 | Permissions: 664
+File: task7_10.c      | Link: 1 | Permissions: 664
+File: task            | Link: 1 | Permissions: 775
+File: task7_5.c       | Link: 1 | Permissions: 664
+File: task7_9.c       | Link: 1 | Permissions: 664
+File: task7_4.c       | Link: 1 | Permissions: 664
+File: task7_1.c       | Link: 1 | Permissions: 660
+File: task7_2.c       | Link: 1 | Permissions: 660
+File: task_by_var_6.c | Link: 1 | Permissions: 664
+File: task7_7.c       | Link: 1 | Permissions: 664
+File: third_file_for_task4.txt | Link: 1 | Permissions: 664
+File: txt_file_for_task3.txt | Link: 1 | Permissions: 664
+File: first_file_for_task4.txt | Link: 1 | Permissions: 664
+File: task7_3.c       | Link: 1 | Permissions: 660
+File: .gitignore      | Link: 1 | Permissions: 664
+File: README.md       | Link: 1 | Permissions: 664
+```
