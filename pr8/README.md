@@ -94,4 +94,36 @@ Pipe Organ Pattern Comparisons: 15463129086 time: 31.581631 seconds Correct
 
 <img width="622" height="63" alt="Знімок екрана 2026-04-19 о 19 18 22" src="https://github.com/user-attachments/assets/a6c79be5-1e67-4cb9-b2ce-c3ade71f24a1" />
 
+Вивід в консоль:
+```bash
+./task
+
+without O_APPEND
+Final file size: 1801 bytes
+Expected size:   1800 bytes
+RESULT: Size is OK, but let's check for corruption...
+First 60 bytes of file content:
+[11101010101010
+0101
+101010101010
+0101
+101010101010
+0101
+1010]
+
+with O_APPEND
+Final file size: 1800 bytes
+Expected size:   1800 bytes
+RESULT: Size is OK, but let's check for corruption...
+First 60 bytes of file content:
+[11101010101010
+0101
+101010101010
+0101
+101010101010
+0101
+1010]
+```
+
 Відповідь:
+Експеримент демонструє, що без прапорця O_APPEND зв'язка lseek(SEEK_END) + write() не є атомарною, через що між визначенням кінця файлу та самим записом інший процес встигає втрутитися, призводячи до стану гонки (race condition), затирання даних та некоректного фінального розміру файлу (1801 байт замість 1800). Натомість використання O_APPEND змушує ядро операційної системи виконувати перехід у кінець файлу та запис як єдину неподільну операцію, що гарантує цілісність структури файлу, ідеальний збіг очікуваного розміру та збереження кожного записаного байта навіть при інтенсивному паралельному доступі.
