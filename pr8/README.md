@@ -1,2 +1,33 @@
 Практична робота №8 з дисципліни АСПз Виконано Дрогобицьким Володимиром на мові С, в середовищі UTM Linux ubuntu server 
 Тема практичної роботи: Системні виклики в UNIX/POSIX (файлові операції, fork(), qsort(), write(), read(), lseek() тощо.
+
+Завдання №1 загальне для усіх(Скриншот завдання):
+
+<img width="648" height="80" alt="Знімок екрана 2026-04-19 о 18 20 53" src="https://github.com/user-attachments/assets/62175e6c-fae9-445a-933a-cf7c94bfc839" />
+
+Відповідь:
+Так, системний виклик write() може повернути значення менше за nbytes, що називається частковим записом (partial write), це стається тоді коли ми пробуєм записати навіть в неблокуючому режимі(O_NONBLOCK), більше ніж може вмістити в себе виклик write();
+
+Вивід в консоль:
+```bash
+./task1
+
+Trieng to write: 104857600 bites
+Have wrote:  65536 bites
+Result: (Partial write)
+
+```
+
+Завдання №2 загальне для усіх(Скриншот завдання):
+
+<img width="624" height="276" alt="Знімок екрана 2026-04-19 о 18 21 22" src="https://github.com/user-attachments/assets/c13d9142-9a1d-40bc-849e-6a65c26e4e9d" />
+
+Завдання №3 загальне для усіх(Скриншот завдання):
+
+<img width="614" height="133" alt="Знімок екрана 2026-04-19 о 18 22 03" src="https://github.com/user-attachments/assets/3105cf13-8ca8-4f17-91af-8e40cfdaeef4" />
+
+<img width="653" height="213" alt="Знімок екрана 2026-04-19 о 18 22 19" src="https://github.com/user-attachments/assets/74b3e52f-3f14-46a0-823c-2ffdd5a9216b" />
+
+Завдання №4 загальне для усіх(Скриншот завдання):
+
+<img width="604" height="351" alt="Знімок екрана 2026-04-19 о 18 22 44" src="https://github.com/user-attachments/assets/696a9a52-84dc-472e-85bf-535b2a2b70d3" />
