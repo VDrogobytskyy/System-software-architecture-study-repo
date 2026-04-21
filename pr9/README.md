@@ -113,7 +113,25 @@ Explanation: I can delete it because I own the directory.
 <img width="589" height="29" alt="Знімок екрана 2026-04-22 о 00 45 37" src="https://github.com/user-attachments/assets/c3627548-1804-4e42-8b9e-c2b4ff974fa4" />
 <img width="584" height="66" alt="Знімок екрана 2026-04-22 о 00 45 48" src="https://github.com/user-attachments/assets/724b49d0-1791-4e9c-85f9-5ed796a5031f" />
 
+Відповідь:
+Даний скрипт почергово виконує команди whoami та id, для отримання очікуваного завданням виводу, також після цього виконується команда
+id -Gn, аби прибрати всі технічні цифри та отримати читабельний вивід принадлежності користувача до різних груп.
 
+Вивід в консоль:
+```bash
+./task9_4.sh.x
+Current user identity:
+drogobytskyyy
+
+Full account details (UID, GID, and Groups):
+uid=1000(drogobytskyyy) gid=1000(drogobytskyyy) groups=1000(drogobytskyyy),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),101(lxd)
+
+List of all groups you belong to:
+drogobytskyyy adm cdrom sudo dip plugdev lxd
+
+Summary:
+User drogobytskyyy is currently active and belongs to 7 groups.
+```
 
 Завдання №5 загальне для усіх(Скриншот завдання):
 <img width="607" height="100" alt="Знімок екрана 2026-04-22 о 00 46 04" src="https://github.com/user-attachments/assets/b5470c7a-2c0e-4b34-8269-5a5fb4eacba0" />
