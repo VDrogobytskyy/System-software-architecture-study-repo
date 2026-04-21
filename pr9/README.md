@@ -13,6 +13,7 @@
 <img width="593" height="81" alt="Знімок екрана 2026-04-22 о 00 44 58" src="https://github.com/user-attachments/assets/4cb4a4bc-d3c7-43a1-91c9-0c13e5c2f566" />
 
 Відповідь:
+
 На моєму дестрибутиві сторонні користувачі мають UID > 1000, що і видно з виводу.
 
 Вивід в консоль:
@@ -31,6 +32,7 @@ User found: test_user3 (UID: 1003)
 <img width="592" height="83" alt="Знімок екрана 2026-04-22 о 00 45 12" src="https://github.com/user-attachments/assets/bbc84914-ff10-424e-8af0-efb76f9673e5" />
 
 Відповідь:
+
 Ми використовуємо sudo cat, щоб виконати це з правами адміністратора, після чого вводимо пароль(перший раз), та бачиво необхідний вивід.
 
 Вивід в консоль:
@@ -84,6 +86,7 @@ Success: File /etc/shadow accessed successfully.
 <img width="601" height="139" alt="Знімок екрана 2026-04-22 о 00 45 26" src="https://github.com/user-attachments/assets/18bed6ca-c11f-443c-ac4e-2d99aef172b5" />
 
 Відповідь:
+
 Відповідь на дане завдання цілком і повністю демонструє вивід.
 
 ***ЗАУВАЖЕННЯ***
@@ -114,6 +117,7 @@ Explanation: I can delete it because I own the directory.
 <img width="584" height="66" alt="Знімок екрана 2026-04-22 о 00 45 48" src="https://github.com/user-attachments/assets/724b49d0-1791-4e9c-85f9-5ed796a5031f" />
 
 Відповідь:
+
 Даний скрипт почергово виконує команди whoami та id, для отримання очікуваного завданням виводу, також після цього виконується команда
 id -Gn, аби прибрати всі технічні цифри та отримати читабельний вивід принадлежності користувача до різних груп.
 
@@ -137,6 +141,7 @@ User drogobytskyyy is currently active and belongs to 7 groups.
 <img width="607" height="100" alt="Знімок екрана 2026-04-22 о 00 46 04" src="https://github.com/user-attachments/assets/b5470c7a-2c0e-4b34-8269-5a5fb4eacba0" />
 
 Відповідь:
+
 Програма демонструє, що можливості звичайного користувача повністю залежать від того, які права встановив root,
 
 При 600: не можемо нічого;
@@ -172,7 +177,48 @@ Read: Success
 Завдання №6 загальне для усіх(Скриншот завдання):
 <img width="603" height="103" alt="Знімок екрана 2026-04-22 о 00 46 16" src="https://github.com/user-attachments/assets/ef4366fc-90f0-4e58-a128-f342d1e7f47b" />
 
+Відповідь:
 
+У ході виконання завдання було проаналізовано механізм розмежування прав доступу в ОС Linux на прикладі трьох різних типів директорій: домашнього каталогу користувача, системних бінарних файлів (/usr/bin) та конфігураційних файлів (/etc).
+
+Вивід в консоль:
+```bash
+./task9_6.sh.x
+Directory: /home/drogobytskyyy
+total 8
+-rw-r--r--  1 root          root            18 Apr 21 22:16 root_owned.txt
+drwxrwxr-x 12 drogobytskyyy drogobytskyyy 4096 Apr 21 21:22 System-software-architecture-study-repo
+
+Testing file access: /home/drogobytskyyy/root_owned.txt
+Read    : Success
+./task9_6.sh.x: line 28: /home/drogobytskyyy/root_owned.txt: Permission denied
+Write   : Access Denied
+Execute : Access Denied
+
+Directory: /usr/bin
+total 580248
+-rwxr-xr-x 1 root root       67760 Jan 23 13:30 [
+-rwxr-xr-x 1 root root       67672 Feb 20 23:51 aa-enabled
+-rwxr-xr-x 1 root root       67872 Feb 20 23:51 aa-exec
+
+Testing file access: /usr/bin/[
+Read    : Success
+./task9_6.sh.x: line 28: /usr/bin/[: Permission denied
+Write   : Access Denied
+Execute : Success
+
+Directory: /etc
+total 1004
+-rw-r--r-- 1 root root       3444 Jul  5  2023 adduser.conf
+drwxr-xr-x 2 root root       4096 Feb 16 07:55 alternatives
+drwxr-xr-x 2 root root       4096 Apr 21 21:38 apparmor
+
+Testing file access: /etc/adduser.conf
+Read    : Success
+./task9_6.sh.x: line 28: /etc/adduser.conf: Permission denied
+Write   : Access Denied
+Execute : Access Denied
+```
 
 Завдання за варіантом №6(Скриншот завдання):
 <img width="521" height="46" alt="Знімок екрана 2026-04-22 о 00 46 54" src="https://github.com/user-attachments/assets/040f7633-ae35-490a-89fc-7d7b3e35ad20" />
