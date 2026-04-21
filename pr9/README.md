@@ -30,6 +30,55 @@ User found: test_user3 (UID: 1003)
 Завдання №2 загальне для усіх(Скриншот завдання):
 <img width="592" height="83" alt="Знімок екрана 2026-04-22 о 00 45 12" src="https://github.com/user-attachments/assets/bbc84914-ff10-424e-8af0-efb76f9673e5" />
 
+Відповідь:
+Ми використовуємо sudo cat, щоб виконати це з правами адміністратора, після чого вводимо пароль(перший раз), та бачиво необхідний вивід.
+
+Вивід в консоль:
+```bash
+./task9_2.sh.x
+
+Try to read /etc/shadow like admin.
+
+[sudo] password for drogobytskyyy:
+root:*:20306:0:99999:7:::
+daemon:*:20306:0:99999:7:::
+bin:*:20306:0:99999:7:::
+sys:*:20306:0:99999:7:::
+sync:*:20306:0:99999:7:::
+games:*:20306:0:99999:7:::
+man:*:20306:0:99999:7:::
+lp:*:20306:0:99999:7:::
+mail:*:20306:0:99999:7:::
+news:*:20306:0:99999:7:::
+uucp:*:20306:0:99999:7:::
+proxy:*:20306:0:99999:7:::
+www-data:*:20306:0:99999:7:::
+backup:*:20306:0:99999:7:::
+list:*:20306:0:99999:7:::
+irc:*:20306:0:99999:7:::
+_apt:*:20306:0:99999:7:::
+nobody:*:20306:0:99999:7:::
+systemd-network:!*:20306::::::
+systemd-timesync:!*:20306::::::
+dhcpcd:!:20306::::::
+messagebus:!:20306::::::
+systemd-resolve:!*:20306::::::
+pollinate:!:20306::::::
+polkitd:!*:20306::::::
+syslog:!:20306::::::
+uuidd:!:20306::::::
+tcpdump:!:20306::::::
+landscape:!:20306::::::
+fwupd-refresh:!*:20306::::::
+drogobytskyyy:$6$HrgO29DLZ4/.6Adm$9i5RbfVTj1SftbOai4qfL5gG1YghF4N7f6NVxKEg1Npe520OySPn.YVGnEbHaaapklaHJRdxVZeeN.w3pHO4a0:20493:0:99999:7:::
+sshd:!:20493::::::
+dnsmasq:!:20509::::::
+rwhod:!:20552::::::
+test_user1:$y$j9T$qAERoX06DZ0XdQwLXbnw0.$Yg4V3ZzV7sDRuSZfsMAk3TV8lp5UA8HWALZBWwx6B2.:20564:0:99999:7:::
+test_user2:$y$j9T$HFCZ984JLYCJudDpL7BkE.$2G7qsJkDd6gfkHVbjctFibtNFTxgMuaV9Iur0sTP3AB:20564:0:99999:7:::
+test_user3:$y$j9T$JyAqXNW27iETLrTkm3xs4/$riwS7RdLlT4JTljDegrQfB9DeHD5nKw1owkzyLaUj/4:20564:0:99999:7:::
+Success: File /etc/shadow accessed successfully.
+```
 
 Завдання №3 загальне для усіх(Скриншот завдання):
 <img width="601" height="139" alt="Знімок екрана 2026-04-22 о 00 45 26" src="https://github.com/user-attachments/assets/18bed6ca-c11f-443c-ac4e-2d99aef172b5" />
