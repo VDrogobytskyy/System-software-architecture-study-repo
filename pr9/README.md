@@ -83,6 +83,31 @@ Success: File /etc/shadow accessed successfully.
 Завдання №3 загальне для усіх(Скриншот завдання):
 <img width="601" height="139" alt="Знімок екрана 2026-04-22 о 00 45 26" src="https://github.com/user-attachments/assets/18bed6ca-c11f-443c-ac4e-2d99aef172b5" />
 
+Відповідь:
+Відповідь на дане завдання цілком і повністю демонструє вивід.
+
+***ЗАУВАЖЕННЯ***
+
+для коректної роботи програми, та отримування очікуваного результату в коді ми використовуєм команду: sudo -u "$USER", адже на сучасному дестрибутиві Linux, права root після надання їх через sudo + password, застосовуються для всієї цепочки виконання.
+
+Вивід в консоль:
+```bash
+./task9_3.sh.x
+Creating a file as drogobytskyyy...
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy 18 Apr 21 22:16 ordinary_file.txt
+
+Copying to home folder as ROOT...
+[sudo] password for drogobytskyyy:
+-rw-r--r-- 1 root root 18 Apr 21 22:16 /home/drogobytskyyy/root_owned.txt
+
+Trying to modify the file...
+Result: Access denied. I cannot edit root's file.
+
+Trying to delete the file...
+
+Result: Success! The file was deleted.
+Explanation: I can delete it because I own the directory.
+```
 
 Завдання №4 загальне для усіх(Скриншот завдання):
 <img width="589" height="29" alt="Знімок екрана 2026-04-22 о 00 45 37" src="https://github.com/user-attachments/assets/c3627548-1804-4e42-8b9e-c2b4ff974fa4" />
