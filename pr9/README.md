@@ -136,6 +136,38 @@ User drogobytskyyy is currently active and belongs to 7 groups.
 Завдання №5 загальне для усіх(Скриншот завдання):
 <img width="607" height="100" alt="Знімок екрана 2026-04-22 о 00 46 04" src="https://github.com/user-attachments/assets/b5470c7a-2c0e-4b34-8269-5a5fb4eacba0" />
 
+Відповідь:
+Програма демонструє, що можливості звичайного користувача повністю залежать від того, які права встановив root,
+
+При 600: не можемо нічого;
+
+При 644: тільки читання,
+
+Щоб знову писати, необхідно отримати права 646 або 666, що буває рідко для системних файлів.
+
+Вивід в консоль:
+```bash
+./task9_5.sh.x
+Creating file as drogobytskyyy...
+-rw-rw-r-- 1 drogobytskyyy drogobytskyyy 15 Apr 21 22:34 temp_experiment.txt
+
+Changing ownership to ROOT and setting permissions to 600 (Owner only)...
+-rw------- 1 root root 15 Apr 21 22:34 temp_experiment.txt
+
+Attempting to READ as drogobytskyyy:
+Read: Access denied
+
+Attempting to WRITE as drogobytskyyy:
+./task9_5.sh.x: line 25: temp_experiment.txt: Permission denied
+Write: Access denied
+
+Changing permissions to 644 (Read-only for others)...
+-rw-r--r-- 1 root root 15 Apr 21 22:34 temp_experiment.txt
+
+Attempting to READ again:
+Sensitive data
+Read: Success
+```
 
 Завдання №6 загальне для усіх(Скриншот завдання):
 <img width="603" height="103" alt="Знімок екрана 2026-04-22 о 00 46 16" src="https://github.com/user-attachments/assets/ef4366fc-90f0-4e58-a128-f342d1e7f47b" />
